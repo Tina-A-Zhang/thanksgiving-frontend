@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./WrappingStation.css";
+import { useBasket } from "../../context/BasketContext";
 
-const WrappingStation = ({ basket, setPage }) => {
+const WrappingStation = ({ setPage }) => {
+  const { basket } = useBasket();
+
   const [showPopup, setShowPopup] = useState(false);
   const [passcode, setPasscode] = useState("");
   const [error, setError] = useState("");
@@ -14,6 +17,7 @@ const WrappingStation = ({ basket, setPage }) => {
 
   // Handle Submit Passcode
   const handleSubmitPasscode = async () => {
+    console.log({ basket });
     try {
       const response = await fetch(
         "https://thanksgiving-backend-l8we.onrender.com/submit-order", // Replace with your actual Render URL
