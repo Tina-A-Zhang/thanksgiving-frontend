@@ -1,0 +1,167 @@
+/* General Container Styling */
+.product-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background-color: #e8f5e9; /* Light green for Christmas vibe */
+  min-height: 100vh;
+  box-sizing: border-box; /* Ensure padding and margin are respected */
+}
+
+.product-content {
+  display: flex;
+  flex-direction: row; /* Arrange sections side by side */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 800px; /* Keep layout compact */
+  width: 90%; /* Make it responsive */
+  flex-wrap: wrap; /* Wrap content on smaller screens */
+}
+
+/* Left Section: Product Info */
+.product-info {
+  flex: 1;
+  text-align: left; /* Align text to the left */
+  min-width: 300px; /* Prevent it from shrinking too much */
+}
+
+.product-info h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 2rem;
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-family: "Arial", sans-serif;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.call-to-action {
+  font-family: "Arial", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d84315; /* Warm orange for emphasis */
+  margin-bottom: 20px;
+}
+
+/* Right Section: Image and Price */
+.product-image-section {
+  flex: 1;
+  text-align: center;
+  min-width: 300px; /* Prevent it from shrinking too much */
+}
+
+.product-image {
+  width: 150px; /* Ensure the image stays small */
+  height: auto;
+  margin-bottom: 10px;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-image.dragging {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.drag-text {
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.price-image {
+  width: 80px; /* Properly size the price icon */
+  height: auto;
+  margin-top: 10px;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Basket Section */
+.basket-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #388e3c;
+  border-radius: 12px;
+  background-color: #f1f8e9;
+  text-align: center;
+  position: relative;
+  width: 250px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.basket-image {
+  width: 100px; /* Properly size the basket */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.basket-badge {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: #d32f2f;
+  color: white;
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: center; /* Center-align the buttons */
+  margin-top: 20px;
+  gap: 20px; /* Add spacing between the buttons */
+}
+
+.previous-button,
+.next-button {
+  width: 120px; /* Set a fixed width to ensure both buttons are equal */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f57c00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-align: center; /* Align text to ensure it looks centered */
+}
+
+.previous-button:hover,
+.next-button:hover {
+  background-color: #e65100;
+}
+
+.previous-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-content {
+    flex-direction: column; /* Stack sections vertically on small screens */
+  }
+
+  .product-info,
+  .product-image-section {
+    min-width: 100%; /* Allow sections to take full width */
+    text-align: center; /* Center-align text for smaller screens */
+  }
+}

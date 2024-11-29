@@ -1,0 +1,174 @@
+/* Basket Container */
+.basket-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9fbe7; /* Light festive pastel */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.basket-preview-container h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 2rem;
+  color: #b71c1c; /* Festive red */
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #b71c1c;
+  padding-bottom: 10px;
+}
+
+/* Items List */
+.basket-items {
+  width: 100%;
+  max-width: 800px; /* Keep items constrained within a central column */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between each item */
+}
+
+/* Individual Item */
+.basket-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #c8e6c9; /* Light green border */
+  border-radius: 12px; /* Softer corners for a modern look */
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Avoid content overflow */
+}
+
+/* Left Section: Image and Quantity */
+.basket-item-left {
+  display: flex;
+  align-items: center; /* Align image and buttons */
+  gap: 15px;
+}
+
+.basket-item-image {
+  width: 80px; /* Consistent image size */
+  height: auto;
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+.basket-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  font-family: "Arial", sans-serif;
+  font-size: 1.2rem;
+  background-color: #4caf50; /* Bright green for child-friendly look */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%; /* Round buttons */
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quantity-button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.basket-item-quantity span {
+  font-family: "Arial", sans-serif;
+  font-size: 1.4rem;
+  color: #2e7d32;
+  padding: 0 10px; /* Padding for number spacing */
+  font-weight: bold;
+}
+
+/* Right Section: Name and Total */
+.basket-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+}
+
+.basket-item-right h3 {
+  font-family: "Arial", sans-serif;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin: 0;
+}
+
+.basket-item-total {
+  font-family: "Arial", sans-serif;
+  font-size: 1.4rem;
+  color: #d84315; /* Warm orange for emphasis */
+  font-weight: bold;
+  margin: 5px 0 0 0;
+}
+
+/* Total Price Section */
+.total-price-container {
+  margin-top: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 1.6rem;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.previous-button,
+.wrap-button {
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background-color: #f57c00;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.previous-button:hover,
+.wrap-button:hover {
+  background-color: #e65100;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .basket-items {
+    width: 90%; /* Constrain width on smaller screens */
+  }
+
+  .basket-item {
+    flex-direction: column; /* Stack item content */
+    text-align: center;
+    padding: 15px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .basket-item-right {
+    align-items: center; /* Center-align on small screens */
+  }
+
+  .basket-item-left {
+    justify-content: center;
+  }
+
+  .wrap-button {
+    width: 90%; /* Full-width button on smaller screens */
+  }
+}
